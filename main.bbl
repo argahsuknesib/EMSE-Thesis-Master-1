@@ -16,5 +16,57 @@
   {}
 \endgroup
 
-\datalist[entry]{nyt/global//global/global}\enddatalist
+\datalist[entry]{nyt/global//global/global}
+  \entry{Sung2016ComputationalDO}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=SC}{%
+         family={Sung},
+         familyi={S\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \keyw{Electrical Engineering and Computer Science.}
+    \strng{namehash}{SC1}
+    \strng{fullhash}{SC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    Recent advances in rapid fabrication technologies have given designers the
+  ability to manufacture increasingly complex geometries with little increase
+  in cost, making it easier than ever to build a robot. However, the process of
+  designing a functional robot remains challenging. Robots are complex systems
+  that tightly integrate mechanical, electrical, and software subsystems. As a
+  result, traditional robot development often requires iterations of design and
+  testing to ensure that the result is both functional and manufacturable. This
+  thesis explores intuitive design tools for robot design and proposes
+  composition as a design approach. We leverage a print-and-fold paradigm of
+  manufacturing, which has been shown to enable functional robots to be created
+  within a day. The main challenge in using composition is that in general,
+  even if two modules function correctly individually, the combination of the
+  two may not be a valid design. We therefore develop algorithms and systems
+  for robot composition that guarantee validity of the design geometry and that
+  check the resulting kinematics. Our main contributions include a database
+  containing parameterized designs for printable joints and mechanisms,
+  algorithms for composition of fold patterns and motion sequences that
+  guarantee no self-intersection, automated generation of fabrication plans for
+  multiple modes of print-and-fold fabrication, an interactive user interface
+  in which users can compose custom robots and receive real-time feedback about
+  their designs, and experimental verification in the form of functional
+  mechanisms and robots. The results provide designers with a framework for
+  rapid design exploration and bring us closer to a future of easy robot design
+  and customization.%
+    }
+    \field{title}{Computational design of foldable robots via composition}
+    \verb{url}
+    \verb https://dspace.mit.edu/handle/1721.1/113734
+    \endverb
+    \field{journaltitle}{DSpace@MIT}
+    \field{year}{2016}
+  \endentry
+\enddatalist
 \endinput

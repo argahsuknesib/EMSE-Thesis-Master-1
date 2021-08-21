@@ -1,12 +1,6 @@
-% Chapter Template
+\chapter{Context of the Work}
 
-\chapter{Context} % Main chapter title
-
-\label{ChapterX} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
-
-%----------------------------------------------------------------------------------------
-%	SECTION 1
-%----------------------------------------------------------------------------------------
+\label{ChapterX}
 
 \section{Introduction}
 The work is based on an Industry 4.0 scenario, which is a cyber-physical environment consisting of various different 
@@ -17,7 +11,62 @@ involved, we can not depend on information we receive from the robot, as this pa
 to other based upon it's configuration. The problem is solved by creating a digital twin which records the information of the 
 environment as well as the robot. The simulator notes the state of the robot and obstacles it surrounds as it passes 
 through the obstacle grid. 
+
 \subsection{Motivation}
 The structure of a dynamic Industry 4.0 environment is highly volatile, the structure is defined through a stationary frame that 
 has been declared before. The decision making capabilities of the robot to navigate the environment while avoiding obstacles and 
 other robots can have a great impact on the performance and the utility of the environment. 
+\section{Robot}
+\subsection{What is a Robot?}
+The origin of the word robot can be found in Czech playwriter Karel Chapek's play titled "Rossum's
+Universal Robots (R.U.R)" in 1921. Thw word robot results from combining the Czech words \textit{rabota} meaning 
+compulsory work and \textit{robotnik} meaning an agricultural bound labor. A \textbf{robot} is a system existing 
+in a physical world, with decision making capabilities of varying extent, can sense the environment it's in to achieve
+some goals. A goal can be differ according to the need of autonomous behaviour. Essentially, robot is a cyber-physical system 
+combining sensing, actuation, and computation. With the advancements in technology and materials essential to build a robot, we can
+see numerous different robots with different applications. Robots such as,
+\begin{itemize}
+    \item a self-foldabel / self-actuated robot developed at MIT \cite{Sung2016ComputationalDO}
+    \item a lightweight aerial robot developed at University of Penn
+    \item consumer-grade drones by DJI 
+    \item Autonomous Vehicles developed at Google.
+    \item Autonomous Surface Vehicles by ASV Global
+\end{itemize}
+Robots help humans to do \textit{dirty}, \textit{dull}, and \textit{dangerous} tasks that no human wishes to do, although they are
+important to be done. As any machines, in an Industry 4.0 environment humans can integrate robots into the development/production process,
+thus these processes can be optimized. Optimizing robots with different applications can help us to exploit robot technologies to leviate pressure
+imposed by growing population by using in applications such as, \begin{itemize}
+    \item  mobility-on-demand
+    \item  automated highways
+    \item  drone swams for servillance
+    \item  truck platoons for long distance logistics
+\end{itemize} Along with these mobile wheel bearing vehicular robots, we hav other robots such as,
+\begin{itemize}
+    \item autonomous behaviour on any terrain for search and rescue with Big Dog robots.
+    \item Persobal Robots for help with menial tasks, for example, iCub Robot.
+    \item Emotional Robots wit Human Computer Interface designed to ease the interaction for example, Pepper Robot.
+\end{itemize}
+
+\section{Autonomous Behavior}
+For an entity to display auto behavior in an environment, it must be able to model and percieve the world it is in, be able to process information
+and perform required actions and plan it's behavior in adverse conditions. The level of such autonomy varies with different use cases. These challenges
+are solved by deploying perception module, action module and decision-making module. These three modules will be mounted and developed on an cyber-physical
+system, thus differentiating cyber-physical systems in this case with pure artificial intelligence. Architectures employed in Robotics combine the three modules
+to be used by the developer to develop such CPS systems.
+\subsection{Perception}
+For a robot to initiate any form important autonomous behavior of decision making, the robot should know where the robot is present in the given Industry 4.0 environment. A robot uses different sensors to infer it's pose in the environment.
+The different sensors provide measurements of the environment and extract meaningful information for autonomous behavior. Proprioceptive sensor in a robot is used to determine the coordiante location of the robot relative
+to the frame it is in. These coordinates when changed define the movement of the robot. Another exteroceptive sensor is used to acquire information regarding the environment the
+robot is currently present in by calculating light intensity and sound amplitude to measure the distance from theh nearest obstacle. The perception module will save the information about the map to be
+inherited in other modules.
+\subsection{Action}
+Action module decides the force and orientation for a robot to perform the task assigned. Action module deals with low level control of the robot's motor. In presence of a predefined goal, 
+the action module will calculate the rotational and forward velocities to reach the goal. Action module comprises of various equations responsible to calculate the linear and angular velocities.
+\subsection{Decision Making}
+In order to achieve a higher order goal, the robot will use the action and perception modules to initiate \textit{navigation} to reach a predefined goal. 
+\textbf{Perception} module has provided the neccesary information to the robot about the environment and location of obstacles. \textbf{Action} module provides 
+the neccesary equations to calculate the velocities to pursue the motion towards the goal. Delibrative planning is executed by the decision-making module to compute a 
+path that does not collide with the obstacles and respects robot's motion constraints. In real Industry 4.0 environment, we've multiple robots and mobile entities. Collaboration, Communication
+and Coordination among the robots for path planning to calculate efficient algorithms for calculating linear and angular velocities are an interesting subject for research.
+For example, collective movement between robots as well as aerial unmanned vehicles such as drones can be initiated by either having a distributed architecture or a centralized leader-follower control.
+A decentralized system is prone to failure much more than a leader-follower control system.
