@@ -68,5 +68,49 @@
     \field{journaltitle}{DSpace@MIT}
     \field{year}{2016}
   \endentry
+
+  \entry{enwiki:1039308545}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={{Wikipedia contributors}},
+         familyi={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{extradate}{1}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+  \field{howpublished}{\url{https://en.wikipedia.org/w/index.php?title=Control_theory&oldid=1039308545}}
+    \field{note}{[Online; accessed 21-August-2021]}
+    \field{title}{Control theory --- {Wikipedia}{,} The Free Encyclopedia}
+    \field{year}{2021}
+  \endentry
+
+  \entry{enwiki:1037814219}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={{Wikipedia contributors}},
+         familyi={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{extradate}{2}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+  \field{howpublished}{\url{https://en.wikipedia.org/w/index.php?title=Cybernetics&oldid=1037814219}}
+    \field{note}{[Online; accessed 22-August-2021]}
+    \field{title}{Cybernetics --- {Wikipedia}{,} The Free Encyclopedia}
+    \field{year}{2021}
+  \endentry
 \enddatalist
 \endinput

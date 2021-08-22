@@ -69,4 +69,57 @@ the neccesary equations to calculate the velocities to pursue the motion towards
 path that does not collide with the obstacles and respects robot's motion constraints. In real Industry 4.0 environment, we've multiple robots and mobile entities. Collaboration, Communication
 and Coordination among the robots for path planning to calculate efficient algorithms for calculating linear and angular velocities are an interesting subject for research.
 For example, collective movement between robots as well as aerial unmanned vehicles such as drones can be initiated by either having a distributed architecture or a centralized leader-follower control.
-A decentralized system is prone to failure much more than a leader-follower control system.
+A decentralized system is prone to failure much more than a leader-follower control system. A decision-making algorithm could be written in the leader-follower control system to be in a certain range
+or perform a certain action around the leader robot. Multi Robot control and coordination allows us to recreate this. 
+
+The simplest example of an autonomous robot would be the Roomba robot, which is employed to clean our houses. The robot would use the sensors to infer the world i.e the room around him and 
+initiate navigation to the most suitable location. A simple roomba robot had, 1) A cliff sensor to make sure the robot is not falling off a level field. 2) A bump sensor to retrack it's behaviour and initiate recovery motion. 3) A wall sensor to detect the walls and distance to it. 4) An optical sensor to detect the odometry and force being exerted by the motor.
+The behaviour displayed by the simple robot is, 
+\begin{itemize}
+    \item \textbf{Wall-Following}: The robot would follow the wall if it bumps into something.
+    \item \textbf{Straight} : The robot would go straight and turn a random angle if it bumps into something.
+    \item \textbf{Dirty Spot} : If the robot is in contact with a dirty spot, it will spiral around the position untill it bumps into something.
+\end{itemize}
+
+This behaviour is very naive and primitive in relation to what robots can do in current scenario and advancements in the last two decades are huge.
+
+\subsection{History}
+The field of robotics emerged from combining and taking influences from various different fields which were present at a time around 1950s.
+Robotics can see it's influences from,
+\begin{itemize}
+    \item \textbf{Control Theory} : Control theory \cite{enwiki:1039308545} develops methods for control of dynamic systems and engineered processes in an environment. The objective is to build a model or an algorithm to decide the behaviour of the entity once a particular trigger event (or an action request) has been initiated, the decided behaviour will influence the state transition to drive it into a desired state while minimizing any delay, overshoot, steady-state behavior while ensuring stability often to achieve a degree of optimality. A controller is present in the robot to decide this behaviour. In robotics, the most important part of controk theory is to control the feedback.
+    \item \textbf{Cybernetics} : Cybernetics \cite{enwiki:1037814219} is an interdisciplinary approach important to regulate the structure and control of a device. The outcomes of the actions are further fed into the feedback loop. It is the integration of sensing, action and environment. 
+    \item \textbf{Artificial Intelligence} : In 1950s, artificial intelligence dealt with planning processes and reasoning which integrated to develop into robotics.
+\end{itemize}
+Robotics shifted in 1980s, with introduction of new ideas such as 1) reactive contro 2) hybrid control and 3) behaviour based control which produced faster and intelligent machines. Artificial Intelligence's approach to solve a robotics problem shifted from initiating
+a delibrative planning algorithm such as shortest distance or a checkers playing computer to focus on the basics of what an intelligent machine would look and behave like. By taking inspiration from organisms in nature, it was found that they follow a simple pattern of reactive rules to an external stimuli. This gave rise to reactive behaviours being applied into robotics.
+Behaviour based robotics was a key concept for the development of robotics at that point of time.  We could use this behaviour based robotics concept and employ it in concepts such as swarm robotics and collective intelligence, thus birthing a new research area in robotics itself.
+As years passed, and we had improvements in computation and hardware design for the sensors, we moved away from the behaviour based robotics. We still see concepts such as wall-following, obstacle avoidance is based upon behaviour based control paradigm.
+A huge trend recently is in leveraging neural networks and machine learning to improve the perception and control of the robot. Researchers are trying to integrate machine learning end to end in the robot itself promoting it's intelligent behaviour. As we use the robot's as a blackbox, with an end to end architecture it is very difficult for us to understand why a robot is doing what it is doing at a certain position.
+In our work, we are trying to record this behaviour of the robot while considering it as a black box with an end to end architecture and learning it's behaviour by making a digital twin.
+\section{Robot Control Architectures}
+The building block of an autonomous system such as a robot is a perception-action loop. Perception-Action loop is a cycle for the robot to process the thing that he experiences and the things that he does, simultaneously improving the decision making process of the robot. The robot is in a continous interaction with it's environment. 
+\begin{itemize}
+    \item \textbf{Reactive Control} : Reactive Control deals with using the sensors to present the current estimate of the world, recovery behavior rules in case of collision produce actions which are simple and fast to compute.
+    \item \textbf{Delibrative Control} : Delibrative Control deals with predicting the future state of the robot, developing a plan for the same for the robot to decide the \textit{sequence of actions} to pursue in order to follow the sequence. In our work, we have used delibrative planning to move the robot from a starting position to the goal position via different algorithms, for example A\textsuperscript{*}, Dijkstra and Greedy Best First Search Algorithm is used to compute the path in the work.
+\end{itemize}
+Complicated actions require complicated control architectures, which combine the three elemental modules of autonomy which are perception, plan and action. Examples of such control architecture are,
+\begin{itemize}
+    \item \textbf{Finite State Machines} : They are reactive and follow a sequential path. Consisting of a finite set of states and transitions between these states. A simple example in this case would be 'pick up the trash' robots.
+    \item \textbf{Subsumption Architecture} : They are reactive and follow a concurrent path, which means that the three modules of perception action and decision making will execute simultaneously.
+    \item \textbf{Sense-Plan-Act} : They follow a delibrative path planning method which use the modules in a step by step way.
+\end{itemize}
+
+\section{Motion Control in Robots}
+Motion Control in a robot deals with the process through which the delibrative or reactive control is passed down to actuators of the robot and finally to the motor resulting in the physical change of state in a direction robot's decided to move to. The action component of the autonomy controls the robot with the motion control module.
+\subsection{Actuators}
+Actuators are used to convert a signal from a circuit board, e.g. from a Raspberry Pi or an Arduino into physical mechanical motion. Actuators serve various purposes, such as Locomotion, Manipulation, heating and sound emission. 
+Other examples of electrical-to-mechanical actuators are, DC Motors, stepper motors and loudspeakers. \textit{For example, } in a normal example of an automated car a driver can steer and acclerate, thus making 2 control points.
+There are examples of for uncertainty and noise in actuators. Examples of such are wheel slip, slack in the motion and environmental factors such as wind, friction and other natural uncontrollable distractions. Actuators influence a certain single degree of freedom of the robot.
+A robot is controllable in all of it's degree of freedom if it has an actuator at each and every degree of freedom. \textit{Degree of Mobility } is the number of DOFs which are operable by the actuators. If the DOF is equal to robot's DOM the robot is a \textit{holonomic robot} and if the number of DOF is greater than it's DOM then it is a \textit{non-holonomic robot}. Otherwise, if robot's DOM is more than it's DOF, the robot's actuation is redundant.
+The robot in our project is a \textbf{Differential Drive Robot} which can actuate with left and right wheels without any interference. DDR has 3 DOF but DOM is 2, differential drive robots are \textit{non-holonomic} in nature.  
+\subsubsection{Kinematics}
+Kinematics are important for us to infer and calculate the motion, i.e behaviour of the robot when it reaches a goal.
+Forward Kinematics decide where the robot would end up in the coordinate frame of the environment $(x,y,\theta)$ given that we have the control parameters and the time of movement. Reverse kinematics deal with finding the control parametetrs of the robot once the desired final pose $(x,y,\theta)$ is provided.
+
+ 
