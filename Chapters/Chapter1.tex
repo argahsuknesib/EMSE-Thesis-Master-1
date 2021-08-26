@@ -9,10 +9,9 @@ environment increases when we account for heterogeneous actors with various deci
 manufacturers present various transform frames, different software and sensors. Due to the heterogeneous nature of the robots 
 involved, we can not depend on information we receive from the robot, as this particular information will differ from a robot 
 to other based upon it's configuration. The problem is solved by creating a digital twin which records the information of the 
-environment as well as the robot. The simulator notes the state of the robot and obstacles it surrounds as it passes 
-through the obstacle grid. 
-
-\subsection{Motivation}
+environment as well as the robot. The simulator is dedicated to capture the digital twin of the robot, whereas a script
+saves the log values of the obstacle space in a semi-structured format to be used later.
+\section{Motivation}
 The structure of a dynamic Industry 4.0 environment is highly volatile, the structure is defined through a stationary frame that 
 has been declared before. The decision making capabilities of the robot to navigate the environment while avoiding obstacles and 
 other robots can have a great impact on the performance and the utility of the environment. 
@@ -24,7 +23,7 @@ compulsory work and \textit{robotnik} meaning an agricultural bound labor. A \te
 in a physical world, with decision making capabilities of varying extent, can sense the environment it's in to achieve
 some goals. A goal can be differ according to the need of autonomous behaviour. Essentially, robot is a cyber-physical system 
 combining sensing, actuation, and computation. With the advancements in technology and materials essential to build a robot, we can
-see numerous different robots with different applications. Robots such as,
+see numerous different robots with different applications. Robots such as : 
 \begin{itemize}
     \item a self-foldabel / self-actuated robot developed at MIT \cite{Sung2016ComputationalDO}
     \item a lightweight aerial robot developed at University of Penn

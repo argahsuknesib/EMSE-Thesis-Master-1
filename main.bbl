@@ -3,8 +3,8 @@
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
-% This file may safely be deleted. It will be recreated as
-% required.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
 %
 \begingroup
 \makeatletter
@@ -16,424 +16,380 @@
   {}
 \endgroup
 
-\datalist[entry]{nyt/global//global/global}
-  \entry{8901113}{article}{}
-    \name{author}{3}{}{%
-      {{hash=BBR}{%
-         family={Barricelli},
-         familyi={B\bibinitperiod},
-         given={Barbara\bibnamedelima Rita},
-         giveni={B\bibinitperiod\bibinitdelim R\bibinitperiod},
-      }}%
-      {{hash=CE}{%
-         family={Casiraghi},
-         familyi={C\bibinitperiod},
-         given={Elena},
-         giveni={E\bibinitperiod},
-      }}%
-      {{hash=FD}{%
-         family={Fogli},
-         familyi={F\bibinitperiod},
-         given={Daniela},
-         giveni={D\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{BBRCEFD1}
-    \strng{fullhash}{BBRCEFD1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2019}
-    \field{labeldatesource}{}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \verb{doi}
-    \verb 10.1109/ACCESS.2019.2953499
-    \endverb
-    \field{pages}{167653\bibrangedash 167671}
-    \field{title}{A Survey on Digital Twin: Definitions, Characteristics,
-  Applications, and Design Implications}
-    \field{volume}{7}
-    \field{journaltitle}{IEEE Access}
-    \field{year}{2019}
-  \endentry
 
-  \entry{7081165}{inproceedings}{}
-    \name{author}{2}{}{%
-      {{hash=HF}{%
-         family={Hidalgo},
-         familyi={H\bibinitperiod},
-         given={Franco},
-         giveni={F\bibinitperiod},
-      }}%
-      {{hash=BT}{%
-         family={Bräunl},
-         familyi={B\bibinitperiod},
-         given={Thomas},
-         giveni={T\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{HFBT1}
-    \strng{fullhash}{HFBT1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
-    \field{sortinit}{H}
-    \field{sortinithash}{H}
-    \field{abstract}{%
-    SLAM (Simultaneous Localization and Mapping) for underwater vehicles is a
-  challenging research topic due to the limitations of underwater localization
-  sensors and error accumulation over long-term operations. Furthermore,
-  acoustic sensors for mapping often provide noisy and distorted images or
-  low-resolution ranging, while video images provide highly detailed images but
-  are often limited due to turbidity and lighting. This paper presents a review
-  of the approaches used in state-of-the-art SLAM techniques: Extended Kalman
-  Filter SLAM (EKF-SLAM), FastSLAM, GraphSLAM and its application in underwater
-  environments.%
-    }
-    \field{booktitle}{2015 6th International Conference on Automation, Robotics
-  and Applications (ICARA)}
-    \verb{doi}
-    \verb 10.1109/ICARA.2015.7081165
-    \endverb
-    \field{pages}{306\bibrangedash 311}
-    \field{title}{Review of underwater SLAM techniques}
-    \field{year}{2015}
-    \warn{\item Invalid format of field 'month'}
-  \endentry
-
-  \entry{pearlJ}{book}{}
-    \name{author}{1}{}{%
-      {{hash=JP}{%
-         family={J.},
-         familyi={J\bibinitperiod},
-         given={Pearl},
-         giveni={P\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{JP1}
-    \strng{fullhash}{JP1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{J}
-    \field{sortinithash}{J}
-    \field{howpublished}{\url{https://dl.acm.org/doi/10.5555/525}}
-    \field{pages}{48}
-    \field{title}{Heuristics: Intelligent Search Strategies for Computer
-  Problem Solving}
-  \endentry
-
-  \entry{KELLER20149822}{article}{}
-    \name{author}{5}{}{%
-      {{hash=KM}{%
-         family={Keller},
-         familyi={K\bibinitperiod},
-         given={Martin},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=HF}{%
-         family={Hoffmann},
-         familyi={H\bibinitperiod},
-         given={Frank},
-         giveni={F\bibinitperiod},
-      }}%
-      {{hash=HC}{%
-         family={Hass},
-         familyi={H\bibinitperiod},
-         given={Carsten},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=BT}{%
-         family={Bertram},
-         familyi={B\bibinitperiod},
-         given={Torsten},
-         giveni={T\bibinitperiod},
-      }}%
-      {{hash=SA}{%
-         family={Seewald},
-         familyi={S\bibinitperiod},
-         given={Alois},
-         giveni={A\bibinitperiod},
-      }}%
-    }
-    \keyw{Least squares, Optimization, Path planning, Trajectory
-  planning,Vehicles}
-    \strng{namehash}{KM+1}
-    \strng{fullhash}{KMHFHCBTSA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2014}
-    \field{labeldatesource}{}
-    \field{sortinit}{K}
-    \field{sortinithash}{K}
-    \field{abstract}{%
-    This paper is concerned with the planning of optimal trajectories for
-  vehicle collision avoidance with a Timed Elastic Band (TEB) framework. The
-  avoidance trajectory is represented by a TEB which is optimized with respect
-  to multiple partially conflicting objectives. The resulting trajectory
-  constitutes the optimal compromise between a mere braking and a lane change
-  maneuver that avoids the collision with the smoothest feasible path. The
-  approach is applicable to general critical traffic situations as the TEB
-  considers the constraints imposed by the vehicle dynamics, road boundaries,
-  static obstacles and moving vehicles.%
-    }
-    \verb{doi}
-    \verb https://doi.org/10.3182/20140824-6-ZA-1003.01143
-    \endverb
-    \field{issn}{1474-6670}
-    \field{number}{3}
-    \field{pages}{9822\bibrangedash 9827}
-    \field{title}{{Planning of Optimal Collision Avoidance Trajectories with
-  Timed Elastic Bands}}
-    \verb{url}
-    \verb https://www.sciencedirect.com/science/article/pii/S1474667016431691
-    \endverb
-    \field{volume}{47}
-    \field{journaltitle}{IFAC Proceedings Volumes}
-    \field{annotation}{%
-    19th IFAC World Congress%
-    }
-    \field{year}{2014}
-  \endentry
-
-  \entry{7482163}{inproceedings}{}
-    \name{author}{3}{}{%
-      {{hash=KAR}{%
-         family={Khairuddin},
-         familyi={K\bibinitperiod},
-         given={Alif\bibnamedelima Ridzuan},
-         giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod},
-      }}%
-      {{hash=TMS}{%
-         family={Talib},
-         familyi={T\bibinitperiod},
-         given={Mohamad\bibnamedelima Shukor},
-         giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
-      }}%
-      {{hash=HH}{%
-         family={Haron},
-         familyi={H\bibinitperiod},
-         given={Habibollah},
-         giveni={H\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{KARTMSHH1}
-    \strng{fullhash}{KARTMSHH1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
-    \field{sortinit}{K}
-    \field{sortinithash}{K}
-    \field{booktitle}{2015 IEEE International Conference on Control System,
-  Computing and Engineering (ICCSCE)}
-    \verb{doi}
-    \verb 10.1109/ICCSCE.2015.7482163
-    \endverb
-    \field{pages}{85\bibrangedash 90}
-    \field{title}{Review on simultaneous localization and mapping (SLAM)}
-    \field{year}{2015}
-  \endentry
-
-  \entry{1389727}{inproceedings}{}
-    \name{author}{2}{}{%
-      {{hash=KN}{%
-         family={Koenig},
-         familyi={K\bibinitperiod},
-         given={N.},
-         giveni={N\bibinitperiod},
-      }}%
-      {{hash=HA}{%
-         family={Howard},
-         familyi={H\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{KNHA1}
-    \strng{fullhash}{KNHA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2004}
-    \field{labeldatesource}{}
-    \field{sortinit}{K}
-    \field{sortinithash}{K}
-    \field{booktitle}{2004 IEEE/RSJ International Conference on Intelligent
-  Robots and Systems (IROS) (IEEE Cat. No.04CH37566)}
-    \verb{doi}
-    \verb 10.1109/IROS.2004.1389727
-    \endverb
-    \field{pages}{2149\bibrangedash 2154 vol.3}
-    \field{title}{Design and use paradigms for Gazebo, an open-source
-  multi-robot simulator}
-    \field{volume}{3}
-    \field{year}{2004}
-  \endentry
-
-  \entry{lavelle}{book}{}
-    \name{author}{1}{}{%
-      {{hash=MS}{%
-         family={M.LaValle},
-         familyi={M\bibinitperiod},
-         given={Steven},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{MS1}
-    \strng{fullhash}{MS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2006}
-    \field{labeldatesource}{}
-    \field{sortinit}{M}
-    \field{sortinithash}{M}
-    \field{howpublished}{\url{http://msl.cs.uiuc.edu/planning/bookbig.pdf}}
-    \field{pages}{20\bibrangedash 22}
-    \field{title}{Planning Algorithms}
-    \field{year}{2006}
-  \endentry
-
-  \entry{Sung2016ComputationalDO}{inproceedings}{}
-    \name{author}{1}{}{%
-      {{hash=SC}{%
-         family={Sung},
-         familyi={S\bibinitperiod},
-         given={C.},
-         giveni={C\bibinitperiod},
-      }}%
-    }
-    \keyw{Electrical Engineering and Computer Science.}
-    \strng{namehash}{SC1}
-    \strng{fullhash}{SC1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2016}
-    \field{labeldatesource}{}
-    \field{sortinit}{S}
-    \field{sortinithash}{S}
-    \field{abstract}{%
-    Recent advances in rapid fabrication technologies have given designers the
-  ability to manufacture increasingly complex geometries with little increase
-  in cost, making it easier than ever to build a robot. However, the process of
-  designing a functional robot remains challenging. Robots are complex systems
-  that tightly integrate mechanical, electrical, and software subsystems. As a
-  result, traditional robot development often requires iterations of design and
-  testing to ensure that the result is both functional and manufacturable. This
-  thesis explores intuitive design tools for robot design and proposes
-  composition as a design approach. We leverage a print-and-fold paradigm of
-  manufacturing, which has been shown to enable functional robots to be created
-  within a day. The main challenge in using composition is that in general,
-  even if two modules function correctly individually, the combination of the
-  two may not be a valid design. We therefore develop algorithms and systems
-  for robot composition that guarantee validity of the design geometry and that
-  check the resulting kinematics. Our main contributions include a database
-  containing parameterized designs for printable joints and mechanisms,
-  algorithms for composition of fold patterns and motion sequences that
-  guarantee no self-intersection, automated generation of fabrication plans for
-  multiple modes of print-and-fold fabrication, an interactive user interface
-  in which users can compose custom robots and receive real-time feedback about
-  their designs, and experimental verification in the form of functional
-  mechanisms and robots. The results provide designers with a framework for
-  rapid design exploration and bring us closer to a future of easy robot design
-  and customization.%
-    }
-    \field{title}{Computational design of foldable robots via composition}
-    \verb{url}
-    \verb https://dspace.mit.edu/handle/1721.1/113734
-    \endverb
-    \field{journaltitle}{DSpace@MIT}
-    \field{year}{2016}
-  \endentry
-
-  \entry{enwiki:1039308545}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=W}{%
-         family={{Wikipedia contributors}},
-         familyi={W\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{W1}
-    \strng{fullhash}{W1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2021}
-    \field{extradate}{1}
-    \field{labeldatesource}{}
-    \field{sortinit}{W}
-    \field{sortinithash}{W}
-  \field{howpublished}{\url{https://en.wikipedia.org/w/index.php?title=Control_theory&oldid=1039308545}}
-    \field{note}{[Online; accessed 21-August-2021]}
-    \field{title}{Control theory --- {Wikipedia}{,} The Free Encyclopedia}
-    \field{year}{2021}
-  \endentry
-
-  \entry{enwiki:1037814219}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=W}{%
-         family={{Wikipedia contributors}},
-         familyi={W\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{W1}
-    \strng{fullhash}{W1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2021}
-    \field{extradate}{2}
-    \field{labeldatesource}{}
-    \field{sortinit}{W}
-    \field{sortinithash}{W}
-  \field{howpublished}{\url{https://en.wikipedia.org/w/index.php?title=Cybernetics&oldid=1037814219}}
-    \field{note}{[Online; accessed 22-August-2021]}
-    \field{title}{Cybernetics --- {Wikipedia}{,} The Free Encyclopedia}
-    \field{year}{2021}
-  \endentry
-
-  \entry{enwiki:1039157161}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=W}{%
-         family={{Wikipedia contributors}},
-         familyi={W\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{W1}
-    \strng{fullhash}{W1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2021}
-    \field{extradate}{3}
-    \field{labeldatesource}{}
-    \field{sortinit}{W}
-    \field{sortinithash}{W}
-    \field{note}{[Online; accessed 25-August-2021]}
-    \field{title}{Edsger W. Dijkstra --- {Wikipedia}{,} The Free Encyclopedia}
-    \verb{url}
-    \verb https://en.wikipedia.org/w/index.php?title=Edsger_W._Dijkstra&oldid=1
-    \verb 039157161
-    \endverb
-    \field{year}{2021}
-  \endentry
-
-  \entry{t2}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=W}{%
-         family={{Wise and Foote}},
-         familyi={W\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{W2}
-    \strng{fullhash}{W2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2021}
-    \field{labeldatesource}{}
-    \field{sortinit}{W}
-    \field{sortinithash}{W}
-    \field{howpublished}{\url{https://https://www.turtlebot.com/turtlebot2/}}
-    \field{note}{[Online, accessed 24-August-2021]}
-    \field{title}{Turtlebot2 - Open-source robot development kit for apps on
-  wheels}
-    \field{year}{2021}
-  \endentry
-\enddatalist
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{8901113}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d4fc699d921a6be3c5b11bfd47eb328f}{%
+           family={Barricelli},
+           familyi={B\bibinitperiod},
+           given={Barbara\bibnamedelima Rita},
+           giveni={B\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=73320b20f086dd1ddd598019c32a9483}{%
+           family={Casiraghi},
+           familyi={C\bibinitperiod},
+           given={Elena},
+           giveni={E\bibinitperiod}}}%
+        {{hash=bc2adcb9c2e4768a9f1bdb31a3c7aa8f}{%
+           family={Fogli},
+           familyi={F\bibinitperiod},
+           given={Daniela},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{c96e3ecb7c89038c8d32e972e58f4cd6}
+      \strng{fullhash}{c96e3ecb7c89038c8d32e972e58f4cd6}
+      \strng{bibnamehash}{c96e3ecb7c89038c8d32e972e58f4cd6}
+      \strng{authorbibnamehash}{c96e3ecb7c89038c8d32e972e58f4cd6}
+      \strng{authornamehash}{c96e3ecb7c89038c8d32e972e58f4cd6}
+      \strng{authorfullhash}{c96e3ecb7c89038c8d32e972e58f4cd6}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{A Survey on Digital Twin: Definitions, Characteristics, Applications, and Design Implications}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{pages}{167653\bibrangedash 167671}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2019.2953499
+      \endverb
+    \endentry
+    \entry{7081165}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=aac6f96ef1b304f01f947641bf8a09ed}{%
+           family={Hidalgo},
+           familyi={H\bibinitperiod},
+           given={Franco},
+           giveni={F\bibinitperiod}}}%
+        {{hash=f50ad54f93539c8cee8b439ba432564e}{%
+           family={Bräunl},
+           familyi={B\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{df4a43cabf542216e016f26bfbc6f522}
+      \strng{fullhash}{df4a43cabf542216e016f26bfbc6f522}
+      \strng{bibnamehash}{df4a43cabf542216e016f26bfbc6f522}
+      \strng{authorbibnamehash}{df4a43cabf542216e016f26bfbc6f522}
+      \strng{authornamehash}{df4a43cabf542216e016f26bfbc6f522}
+      \strng{authorfullhash}{df4a43cabf542216e016f26bfbc6f522}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{SLAM (Simultaneous Localization and Mapping) for underwater vehicles is a challenging research topic due to the limitations of underwater localization sensors and error accumulation over long-term operations. Furthermore, acoustic sensors for mapping often provide noisy and distorted images or low-resolution ranging, while video images provide highly detailed images but are often limited due to turbidity and lighting. This paper presents a review of the approaches used in state-of-the-art SLAM techniques: Extended Kalman Filter SLAM (EKF-SLAM), FastSLAM, GraphSLAM and its application in underwater environments.}
+      \field{booktitle}{2015 6th International Conference on Automation, Robotics and Applications (ICARA)}
+      \field{month}{2}
+      \field{title}{Review of underwater SLAM techniques}
+      \field{year}{2015}
+      \field{pages}{306\bibrangedash 311}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICARA.2015.7081165
+      \endverb
+    \endentry
+    \entry{pearlJ}{book}{}
+      \name{author}{1}{}{%
+        {{hash=24fd5161a51f70acf2fb3e4d64bbe48b}{%
+           family={J.},
+           familyi={J\bibinitperiod},
+           given={Pearl},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{24fd5161a51f70acf2fb3e4d64bbe48b}
+      \strng{fullhash}{24fd5161a51f70acf2fb3e4d64bbe48b}
+      \strng{bibnamehash}{24fd5161a51f70acf2fb3e4d64bbe48b}
+      \strng{authorbibnamehash}{24fd5161a51f70acf2fb3e4d64bbe48b}
+      \strng{authornamehash}{24fd5161a51f70acf2fb3e4d64bbe48b}
+      \strng{authorfullhash}{24fd5161a51f70acf2fb3e4d64bbe48b}
+      \field{sortinit}{J}
+      \field{sortinithash}{c45040a764d616897e7f5b30174d7b92}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://dl.acm.org/doi/10.5555/525}}
+      \field{title}{Heuristics: Intelligent Search Strategies for Computer Problem Solving}
+      \field{pages}{48}
+      \range{pages}{1}
+    \endentry
+    \entry{KELLER20149822}{article}{}
+      \name{author}{5}{}{%
+        {{hash=a5d636ef9ee9c1c00e41043d28cab930}{%
+           family={Keller},
+           familyi={K\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=348647b52565b282f58ebc760dbaef0f}{%
+           family={Hoffmann},
+           familyi={H\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c51f07717e3e9095eff60df62fc97dab}{%
+           family={Hass},
+           familyi={H\bibinitperiod},
+           given={Carsten},
+           giveni={C\bibinitperiod}}}%
+        {{hash=802ba9269c0073c577b138e7404347cd}{%
+           family={Bertram},
+           familyi={B\bibinitperiod},
+           given={Torsten},
+           giveni={T\bibinitperiod}}}%
+        {{hash=240c1eeb24636550ac160ec4f0e3db1f}{%
+           family={Seewald},
+           familyi={S\bibinitperiod},
+           given={Alois},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{561c60e579486f781c70d22627303d8c}
+      \strng{fullhash}{76a754e96bc9c2515466ab381183f784}
+      \strng{bibnamehash}{561c60e579486f781c70d22627303d8c}
+      \strng{authorbibnamehash}{561c60e579486f781c70d22627303d8c}
+      \strng{authornamehash}{561c60e579486f781c70d22627303d8c}
+      \strng{authorfullhash}{76a754e96bc9c2515466ab381183f784}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper is concerned with the planning of optimal trajectories for vehicle collision avoidance with a Timed Elastic Band (TEB) framework. The avoidance trajectory is represented by a TEB which is optimized with respect to multiple partially conflicting objectives. The resulting trajectory constitutes the optimal compromise between a mere braking and a lane change maneuver that avoids the collision with the smoothest feasible path. The approach is applicable to general critical traffic situations as the TEB considers the constraints imposed by the vehicle dynamics, road boundaries, static obstacles and moving vehicles.}
+      \field{annotation}{19th IFAC World Congress}
+      \field{issn}{1474-6670}
+      \field{journaltitle}{IFAC Proceedings Volumes}
+      \field{number}{3}
+      \field{title}{{Planning of Optimal Collision Avoidance Trajectories with Timed Elastic Bands}}
+      \field{volume}{47}
+      \field{year}{2014}
+      \field{pages}{9822\bibrangedash 9827}
+      \range{pages}{6}
+      \verb{doi}
+      \verb https://doi.org/10.3182/20140824-6-ZA-1003.01143
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1474667016431691
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1474667016431691
+      \endverb
+      \keyw{Least squares,Optimization,Path planning,Trajectory planning,Vehicles}
+    \endentry
+    \entry{7482163}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=30c67bc52cad96b07631ecbf2ba91404}{%
+           family={Khairuddin},
+           familyi={K\bibinitperiod},
+           given={Alif\bibnamedelima Ridzuan},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=7fb7a6855f8bdd3f244295c05e3d2a38}{%
+           family={Talib},
+           familyi={T\bibinitperiod},
+           given={Mohamad\bibnamedelima Shukor},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=8c5baf97b321f2d2ee4c27c533c7228d}{%
+           family={Haron},
+           familyi={H\bibinitperiod},
+           given={Habibollah},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{e91385f61c7b396e64304c37bf58bf87}
+      \strng{fullhash}{e91385f61c7b396e64304c37bf58bf87}
+      \strng{bibnamehash}{e91385f61c7b396e64304c37bf58bf87}
+      \strng{authorbibnamehash}{e91385f61c7b396e64304c37bf58bf87}
+      \strng{authornamehash}{e91385f61c7b396e64304c37bf58bf87}
+      \strng{authorfullhash}{e91385f61c7b396e64304c37bf58bf87}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 IEEE International Conference on Control System, Computing and Engineering (ICCSCE)}
+      \field{title}{Review on simultaneous localization and mapping (SLAM)}
+      \field{year}{2015}
+      \field{pages}{85\bibrangedash 90}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICCSCE.2015.7482163
+      \endverb
+    \endentry
+    \entry{1389727}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=f21e936179fd2f3731a7ef53c532b2cc}{%
+           family={Koenig},
+           familyi={K\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=e9a345a82a1b429b0d7a25ea1b76d257}{%
+           family={Howard},
+           familyi={H\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{b03e6b2085497da7c20890ba74ee3d19}
+      \strng{fullhash}{b03e6b2085497da7c20890ba74ee3d19}
+      \strng{bibnamehash}{b03e6b2085497da7c20890ba74ee3d19}
+      \strng{authorbibnamehash}{b03e6b2085497da7c20890ba74ee3d19}
+      \strng{authornamehash}{b03e6b2085497da7c20890ba74ee3d19}
+      \strng{authorfullhash}{b03e6b2085497da7c20890ba74ee3d19}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2004 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) (IEEE Cat. No.04CH37566)}
+      \field{title}{Design and use paradigms for Gazebo, an open-source multi-robot simulator}
+      \field{volume}{3}
+      \field{year}{2004}
+      \field{pages}{2149\bibrangedash 2154 vol.3}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1109/IROS.2004.1389727
+      \endverb
+    \endentry
+    \entry{lavelle}{book}{}
+      \name{author}{1}{}{%
+        {{hash=76d3c8e98f1ceca9719247764b95db17}{%
+           family={M.LaValle},
+           familyi={M\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{76d3c8e98f1ceca9719247764b95db17}
+      \strng{fullhash}{76d3c8e98f1ceca9719247764b95db17}
+      \strng{bibnamehash}{76d3c8e98f1ceca9719247764b95db17}
+      \strng{authorbibnamehash}{76d3c8e98f1ceca9719247764b95db17}
+      \strng{authornamehash}{76d3c8e98f1ceca9719247764b95db17}
+      \strng{authorfullhash}{76d3c8e98f1ceca9719247764b95db17}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://msl.cs.uiuc.edu/planning/bookbig.pdf}}
+      \field{title}{Planning Algorithms}
+      \field{year}{2006}
+      \field{pages}{20\bibrangedash 22}
+      \range{pages}{3}
+    \endentry
+    \entry{Sung2016ComputationalDO}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=3498e760425a27f52991c80636c7f632}{%
+           family={Sung},
+           familyi={S\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{3498e760425a27f52991c80636c7f632}
+      \strng{fullhash}{3498e760425a27f52991c80636c7f632}
+      \strng{bibnamehash}{3498e760425a27f52991c80636c7f632}
+      \strng{authorbibnamehash}{3498e760425a27f52991c80636c7f632}
+      \strng{authornamehash}{3498e760425a27f52991c80636c7f632}
+      \strng{authorfullhash}{3498e760425a27f52991c80636c7f632}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recent advances in rapid fabrication technologies have given designers the ability to manufacture increasingly complex geometries with little increase in cost, making it easier than ever to build a robot. However, the process of designing a functional robot remains challenging. Robots are complex systems that tightly integrate mechanical, electrical, and software subsystems. As a result, traditional robot development often requires iterations of design and testing to ensure that the result is both functional and manufacturable. This thesis explores intuitive design tools for robot design and proposes composition as a design approach. We leverage a print-and-fold paradigm of manufacturing, which has been shown to enable functional robots to be created within a day. The main challenge in using composition is that in general, even if two modules function correctly individually, the combination of the two may not be a valid design. We therefore develop algorithms and systems for robot composition that guarantee validity of the design geometry and that check the resulting kinematics. Our main contributions include a database containing parameterized designs for printable joints and mechanisms, algorithms for composition of fold patterns and motion sequences that guarantee no self-intersection, automated generation of fabrication plans for multiple modes of print-and-fold fabrication, an interactive user interface in which users can compose custom robots and receive real-time feedback about their designs, and experimental verification in the form of functional mechanisms and robots. The results provide designers with a framework for rapid design exploration and bring us closer to a future of easy robot design and customization.	}
+      \field{journaltitle}{DSpace@MIT}
+      \field{title}{Computational design of foldable robots via composition}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://dspace.mit.edu/handle/1721.1/113734
+      \endverb
+      \verb{url}
+      \verb https://dspace.mit.edu/handle/1721.1/113734
+      \endverb
+      \keyw{Electrical Engineering and Computer Science.}
+    \endentry
+    \entry{enwiki:1039308545}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{1}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/w/index.php?title=Control_theory&oldid=1039308545}}
+      \field{note}{[Online; accessed 21-August-2021]}
+      \field{title}{Control theory --- {Wikipedia}, The Free Encyclopedia}
+      \field{year}{2021}
+    \endentry
+    \entry{enwiki:1037814219}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{2}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/w/index.php?title=Cybernetics&oldid=1037814219}}
+      \field{note}{[Online; accessed 22-August-2021]}
+      \field{title}{Cybernetics --- {Wikipedia}, The Free Encyclopedia}
+      \field{year}{2021}
+    \endentry
+    \entry{enwiki:1039157161}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6aea1a416c89509a7df1cbb69249cb6}{%
+           family={{Wikipedia contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{fullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{bibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorbibnamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authornamehash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \strng{authorfullhash}{b6aea1a416c89509a7df1cbb69249cb6}
+      \field{extraname}{3}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 25-August-2021]}
+      \field{title}{Edsger W. Dijkstra --- {Wikipedia}, The Free Encyclopedia}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Edsger_W._Dijkstra&oldid=1039157161
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Edsger_W._Dijkstra&oldid=1039157161
+      \endverb
+    \endentry
+    \entry{t2}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4a09dba43715e90f60a8e5fa33192e31}{%
+           family={{Wise and Foote}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a09dba43715e90f60a8e5fa33192e31}
+      \strng{fullhash}{4a09dba43715e90f60a8e5fa33192e31}
+      \strng{bibnamehash}{4a09dba43715e90f60a8e5fa33192e31}
+      \strng{authorbibnamehash}{4a09dba43715e90f60a8e5fa33192e31}
+      \strng{authornamehash}{4a09dba43715e90f60a8e5fa33192e31}
+      \strng{authorfullhash}{4a09dba43715e90f60a8e5fa33192e31}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://https://www.turtlebot.com/turtlebot2/}}
+      \field{note}{[Online, accessed 24-August-2021]}
+      \field{title}{Turtlebot2 - Open-source robot development kit for apps on wheels}
+      \field{year}{2021}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
+

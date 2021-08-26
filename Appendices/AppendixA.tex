@@ -1,25 +1,81 @@
 % Appendix A
 
-\chapter{Frequently Asked Questions} % Main appendix title
+\chapter{Parameters for Navigation} % Main appendix title
 
-\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
+\label{Appendix1} % For referencing this appendix elsewhere, use \ref{AppendixA}
 
-\section{How do I change the colors of links?}
+\section{Robot's Parameters}
+\begin{table*}[ht]
+    \caption{Parameters for Costmap}
+    \centering
+    \begin{tabular}{p{0.25\linewidth}p{0.25\linewidth}}
+    \hline
+    Parameter & Value \\
+    \hline
+    max\_obstacle\_height & 0.60\\
+    robot\_radius & 0.17\\
+    \\
+    obstacle\_layer & : \\
+    enabled & true \\
+    max\_obstacle\_height & 0.6 \\
+    origin\_z & 0.0 \\
+    z\_resolution & 0.2 \\
+    z\_vowels & 10 \\
+    unknown\_threshold & 15 \\
+    mark\_threshold & 0 \\
+    combination\_method & : 1\\
+    track\_unknown\_space & true \\
+    obstacle\_range : 5.5\\
+    raytrace\_range : 6.0 \\
+    origin\_z & 0.0 \\
+    publish\_voxel\_map & false \\
+    observation\_sources & scan \\
+    \\
+    inflation\_layer & : \\
+    enabled & true \\
+    cost\_scaling\_factor : 5.0 \\
+    inflation\_radius : 0.4 \\
+    static\_layer & : \\
+    enabled & true \\
+    \hline
+    \end{tabular}
+\end{table*}
 
-The color of links can be changed to your liking using:
+\begin{table*}[ht]
+    \caption{Global Costmap Parameters}
+    \centering
+    \begin{tabular}{p{0.25\linewidth}p{0.25\linewidth}}
+        \hline
+        Parameter & Value \\
+        \hline
+        global\_frame & map \\
+        robot\_base\_frame & base\_footprint \\
+        update\_frequency & 0.2 \\
+        publish\_frequency & 0.2 \\
+        transform\_tolerance & 0.5 \\
+    \end{tabular}
+\end{table*}
 
-{\small\verb!\hypersetup{urlcolor=red}!}, or
+\begin{table*}[ht]
+    \caption{Global Planner Parameters}
+    \centering
+    \begin{tabular}{p{0.25\linewidth}p{0.25\linewidth}}
+        \hline
+        Parameter & Value \\
+        \hline
+        old\_navfn\_behavior & false \\
+        use\_quadratic & true \\
+        use\_dijkstra & true \\
+        use\_grid\_path & false \\
+        allow\_unknown & true \\
+        planner\_window\_x & 0.0 \\
+        planner\_window\_y & 0.0 \\
+        default\_tolerance & 0.0 \\
+        publish\_scale & 100 \\
+        lethal\_cost & 253 \\
+        neutral\_cost & 50 \\
+        cost\_factor & 3.0 \\
+        publish\_potential & true \\
+     \end{tabular}   
+\end{table*}
 
-{\small\verb!\hypersetup{citecolor=green}!}, or
-
-{\small\verb!\hypersetup{allcolor=blue}!}.
-
-\noindent If you want to completely hide the links, you can use:
-
-{\small\verb!\hypersetup{allcolors=.}!}, or even better: 
-
-{\small\verb!\hypersetup{hidelinks}!}.
-
-\noindent If you want to have obvious links in the PDF but not the printed text, use:
-
-{\small\verb!\hypersetup{colorlinks=false}!}.
