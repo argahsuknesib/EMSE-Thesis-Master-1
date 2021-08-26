@@ -1,0 +1,81 @@
+% Chapter Template
+
+\chapter{Solution to Log Generation} % Main chapter title
+
+\label{Chapter4} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+\section{Introduction}
+In the previous chapters, we have discussed the method to implement the solution to generate a path. Path Generation and Implementation of a method to store the behaviour of the robot with respect to it's neighbours is another issue.
+In this chapter, we will cover the method implemented for generation of the log file with respect to the nearby obstacles. 
+
+\section{Solution}
+
+\subsection{Constraints}
+As we are implementing the solution by following the hypothesis that we wish to see and generate the log in the Digital Twin from the perspective of the God's eye.
+We can not use any information that has been published by the Robot. Thus, we can not use \textit{scan} topic and sensors to infer data and proceed with data mining.
+Therefore, we are only limited to \textit{'use what we can see'}. Odometry describe the position of the robot in the context of the environment. From the god's eye perspective,
+we can only see the positional information or \textit{pose} of the robot. Therefore, to solve the log generation problem we will only use the \textbf{x} and \textbf{y} positions of the robot.
+
+\subsection{Obstacle Space}
+While generation of the environment in gazebo, every obstacle is given a position in it. The position of the obstacle is also described by 
+using \textbf{x} and \textbf{y} positions of the obstacle. Thus, if we have 44 boxes, we should have 44 different pairs of \textbf{x} and \textbf{y} positions for the obstacle space.
+\begin{figure}[th]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Figures/simple-obstacle-x-y.png}
+    \decoRule
+    \caption[]{Obstacle positioning}
+    \label{fig:ObstaclePositioning}
+\end{figure}
+
+\subsubsection{Correlation of obstacle with robot}
+In our digital twin, we wish to use the Odometry positions of the robot as well as the obstacle. To find if there is an obstacle near the robot, we will have to find a way to correlate the both positions.
+A simple algorithm to do so could be,
+\begin{itemize}
+    \item Finding the x, y position of the robot.
+    \item Using the distance of the center of the obstacle with it's borders.
+    \item Adding the particular value to the obstacle's position
+    \item If it is equal, obstacle is there else not.
+    \item Recording this behaviour.
+\end{itemize}
+
+The algorithm can be used to produce the obstacle space in a grid around the robot. The algorithm is simple in it's definition but lacks in many use cases.
+For example, if the robot just passes around the corner of the obstacle, the algorithm will not be able to show if the position is close to an obstacle or not.
+Thus, it needs improvement. 
+
+The improvement should be noted in correlation to the constraints so solve the problem, i.e by only using the position of the robot as well as the obstacle.
+
+\section{Final Solution}
+In our implementation, the length of the obstacle is 1 unit. Since the obstacle is a square, the length as well as the breadth are 1 unit each.
+There is only one position of the obstalcle i.e at the middle (see Figure~\ref{fig:ObstaclePositioning}). We need to improve on the position, and create more pairs of positions where the obstacle is.
+We approached this problem by dividing a square into 8 parts with different positional points. The obstacle's distance from the center to an edge is \textbf{0.5 units}.
+In order to improve and give more information about the obstacle space to the robot, we had to divide the obstacle into 8 lines with 5 points on each, signifying the coordinates of the obstacle space.
+Each of these points are situated at \textbf{0.1 unit} distance from one another. 
+
+\begin{figure}[th]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Figures/improved-obstacle-space.jpg}
+    \decoRule
+    \caption[]{Divided Obstacle Space}
+    \label{fig:ObstacleSpaceDivided}
+\end{figure}
+
+As seen in Figure~\ref{fig:ObstacleSpaceDivided}, there are multiple points described in an obstacle space as compared to just one in the previous approach.
+Eventhough, we are not using any sensors to get the information, we can name a \textit{perception} range defining the points the robot will check in order to find a point that is present in the obstacle space.
+There are 44 obstacles with 72 points each, which means that the obstacle space data structure (python list in our implementation) contains, 3168 pairs of \textbf{x} and \textbf{y} positions.
+As the robot will move across the configuration space, the x and y coordinates of the robot will be used to calculate a nearby obsatcle point, if it exists based upon the \textit{perception range} defined in the algorithm.
+The obstacle space is saved in a list, and the algorithm will find a point in the perception range of the robot and if it is present in the obstacle space, it will denote it as an obstacle.
+Another list will is created, which saves the position values in different grid sizes based upon the perception range of the robot. For example, in a \textit{3 by 3 grid}, the different positions are written to the list, and further to a semi-structured csv file. The log file is then to be used for data mining and reinforcement learning applications.
+The log will contain,
+
+\begin{itemize}
+    \item ROS timestamp in seconds.
+    \item x and y coordinate of the robot.
+    \item the obstacle grid (\textit{any size}) calculated by the algorithm.
+    \item x and y coordinates of the goal.
+    \item relative x and y coordinates to the goal
+    \item manhattan distance of the robot to the goal.
+    \item euclidian distance of the robot to the goal.
+    \item angular orientation in z axis i.e the rotation of the robot.
+\end{itemize}
+
+\section{Conclusion}

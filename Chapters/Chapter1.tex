@@ -1,6 +1,6 @@
 \chapter{Context of the Work}
 
-\label{ChapterX}
+\label{Chapter1}
 
 \section{Introduction}
 The work is based on an Industry 4.0 scenario, which is a cyber-physical environment consisting of various different 
@@ -54,11 +54,17 @@ are solved by deploying perception module, action module and decision-making mod
 system, thus differentiating cyber-physical systems in this case with pure artificial intelligence. Architectures employed in Robotics combine the three modules
 to be used by the developer to develop such CPS systems.
 \subsection{Perception}
-For a robot to initiate any form important autonomous behavior of decision making, the robot should know where the robot is present in the given Industry 4.0 environment. A robot uses different sensors to infer it's pose in the environment.
-The different sensors provide measurements of the environment and extract meaningful information for autonomous behavior. Proprioceptive sensor in a robot is used to determine the coordiante location of the robot relative
-to the frame it is in. These coordinates when changed define the movement of the robot. Another exteroceptive sensor is used to acquire information regarding the environment the
+For a robot to initiate any form important autonomous behavior of decision making, the robot should know where the robot is present in the given Industry 4.0 environment. A robot uses different sensors to infer it's pose in the environment. A
+sensor is an entity that is used to measure the state of the world as well as the state of the robot relative to the world. 
+The different sensors provide measurements of the environment and extract meaningful information for autonomous behavior. \textbf{Proprioceptive sensor} in a robot is used to determine the coordiante location of the robot relative
+to the frame it is in, by measuring internal information to the robot. Proprioceptive sensors can also measure odometry, speedometer, energy level and acceleration of the robot. These coordinates when changed define the movement of the robot. Another exteroceptive sensor is used to acquire information regarding the environment the
 robot is currently present in by calculating light intensity and sound amplitude to measure the distance from theh nearest obstacle. The perception module will save the information about the map to be
-inherited in other modules.
+inherited in other modules. \textbf{Exteroceptive Sensors} measure something external to the robot, i.e the environment. Exteroceptive sensors are of two types, 
+\begin{itemize}
+    \item \textit{Active} : These sensors affect the environment by emitting energy. Examples would be, calculating distance with Infrared Sensor, sonar range finder and calculating distance with laser scanners.
+    \item \textit{Passive} : These sensors have no affect on the environment, for example, the ambient light sensor, a sound sensor or camera being used to sense vision.
+\end{itemize} 
+
 \subsection{Action}
 Action module decides the force and orientation for a robot to perform the task assigned. Action module deals with low level control of the robot's motor. In presence of a predefined goal, 
 the action module will calculate the rotational and forward velocities to reach the goal. Action module comprises of various equations responsible to calculate the linear and angular velocities.
@@ -110,6 +116,14 @@ Complicated actions require complicated control architectures, which combine the
     \item \textbf{Sense-Plan-Act} : They follow a delibrative path planning method which use the modules in a step by step way.
 \end{itemize}
 
+\begin{figure}[th]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/controller-process.png}
+    \decoRule
+    \caption[]{State Diagram of Controller}
+    \label{fig:StateDiagController}
+\end{figure}
+
 \section{Motion Control in Robots}
 Motion Control in a robot deals with the process through which the delibrative or reactive control is passed down to actuators of the robot and finally to the motor resulting in the physical change of state in a direction robot's decided to move to. The action component of the autonomy controls the robot with the motion control module.
 \subsection{Actuators}
@@ -122,4 +136,104 @@ The robot in our project is a \textbf{Differential Drive Robot} which can actuat
 Kinematics are important for us to infer and calculate the motion, i.e behaviour of the robot when it reaches a goal.
 Forward Kinematics decide where the robot would end up in the coordinate frame of the environment $(x,y,\theta)$ given that we have the control parameters and the time of movement. Reverse kinematics deal with finding the control parametetrs of the robot once the desired final pose $(x,y,\theta)$ is provided.
 
- 
+ \section{Localization}
+Localization deals with positioning a robot in the coordinate frame of the environment. When you put a robot randomly in an Industry 4.0 environment, it does not know where it is or how the environment around the robot looks. There are various methods with which one can accomplish localization. 
+\textit{Dead-Reckoning}, is an initial/minimal method of localization where we know the initial position of the robot, and we further update the pose of the robot blindly based on the differential movements. Thius method is odometry-based. 
+\textit{Global Localization}, is a method where initial pose of the robot is not known. There are two major methods to infer the position of the robot and initialize localization. 
+\begin{itemize}
+    \item \textbf{Map-Based Localization} : In this method, we have various landmarks or obstacles which we can develop into a map. Sensors employed in this method are, laser sensor, camera for vision and proximity sensors. There are various map-matching techniques used to develop a map.
+    \item \textbf{Beacon-Based} : In this methods, we employ an active infrastructure with bluetooth, WiFi, GPS Sensors for outdoors. The method used here is trilateration, fingerprinting and proximity.
+\end{itemize}
+
+
+In our implementation, as well as major implementations across different robotics projects. The project employs a combination of global localization and position tracking methods.
+There are multiple challenges faced by localization in dead-reckoning and global localization,
+\begin{itemize}
+    \item \textbf{Dead-Reckoning} \begin{itemize} \item a slip could occour in the wheel, thus displacing the localization and producing an error \item errors caused by runaway \end{itemize}
+    \item \textbf{Global Localization} \begin{itemize} \item various errors and failures \item noise in the non-Gaussian sensor \item unreliability of sensors access such as GPS \item ambiguous map \item environments which are continuously changing with dynamic obstacles \item a robot is not able to know that it has been displaced, so it still displays the pose relative to the previous reference frame.  \end{itemize}
+\end{itemize}
+\subsection{Probabilistic Localization}
+In robotics, we employ localization probabilistically. The three key components to such localization are robot's information related to where it is (it's initial state), a predefined motion model and a sensor model to record the information of the surroundings by the robot.
+
+
+\section{Path Planning}
+Path Planning is done to predict the next successive states of the robot and form a path to which the robot could move. Path Planning is done by defining the configuration space of the environment and predicting a strategy employing various algorithms considering the space as well as the robot's motion constraints.
+
+\begin{figure}[th]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/path-planning-comic.jpeg}
+    \decoRule
+    \caption[]{Path Planning}
+    \label{fig:Path Planning Comic}
+\end{figure}
+
+
+\subsection{Configuration Space}
+An Industry 4.0 environment has broadly 2 types of objects, \textbf{robots} and \textbf{obstacles}. They are considered to be the part of the world.
+Robot's actions for motion planning is a set of motions a robot could execute as a rigid body in it's degree of freedom while considering it's motion constraints. 
+The 'space' for the robot to move is possible coordinate motion space that can be applied for the robot to move in the environment without hitting an obstacle or obstructing the path of another robot.
+We can use similar motion planning algorithms to different problems and robots which have other geometry and motion controls. Robot's configuration can be described by a vector containing joint coordiantes of the robot. These coordinates are either an angle or a length for rotational and sliding joint respectively.
+Robot's Motion space is the environment space deducting the obstacle's space. 
+
+\subsubsection{Minkowski Sum}
+Minkowski Sum is used to calculate the vector configuration space of the robot as a whole. The sum of two sets of position vectors \textbf{A} and \textbf{B} are calculated by adding a those vectors with one another, forming the set
+$A + B = {a + b | a \in A and b \in B}$ 
+To compute free space and an obstacle space for the robot, we need the vecotrs for the static obstacle as well as the robot in relation to a specific reference point. So, in case the robot collide, we add those two positional vectors, the result provides the value of obstacle space.
+
+\subsubsection{Path Planning Problem}
+The objective of a path planning problem is to succesfully predict the next states of the robot which the robot would follow. A trajectory is defined as the path that the robot takes, the trajectory is/can be different from the planned predicted path because of drift and size of the robot matter while cutting sharp corners in the path.
+Thus, in an Industry 4.0 environment a workspace, an obstacle region and a configuration space are defined. Suppose that we wish to go from Point A to Point B following the trajectory. The trajectory is calculated by a function where the initial and the final positions are both in the configuration space and the robot moves till the final destination coordiante is reached.
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=0.8\textwidth]{Figures/path-planning-to-goal.jpg}
+\decoRule
+\caption[]{Evaluation of Possible Path to Goal.}
+\label{fig:Path Planning}
+\end{figure}
+
+\begin{figure}[th]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/14x14_grid_paths.png}
+    \decoRule
+    \caption{Possible ways of path planning.}
+    \label{fig: Grid Paths}
+\end{figure}
+
+There are various different approaches to path planning which use the configuration space of the environment for succesful next state planning. The different solutions provide levels of completeness to the solution. In our context, the path planning provides a complete solution i.e \textit{If a solution exists, it will find one otherwise it will return a failure to form the path}. 
+The work employs \textit{combinatorial method} to find the path to a goal state. 
+
+\subsubsection{Combinatorial Method}
+Combinatorial Method is employed to calculate a valid roadmap to access the connectivity to the final goal destination by maintaining the robot's constraints, with resoect to the obstacle space.
+Combinatorial Method is executed in the following steps,
+\begin{itemize}
+    \item Calculating the Configuration space, and dividing them into free/obstacle space. This is employed by using SLAM (Simultaneous Localization and Mapping) to develop a map for the configuration space.
+    \item Generation of a roadmap in the free configuration space, i.e calculating the free space in which the robot can reach the goal, and once the robot reaches the destination the exploration stops.
+    \item Computing the cost of the path from initial state to the final state, and choosing the path suited for implementation, for example, shortest path, optimal path and path subjected to some constraints. It is totally user defined.
+    \item The result is the final path in the free configuration zone.
+\end{itemize}
+
+\section{Digital Twins}
+Digital Twin (DT) technology is now used and commercialized in various industries to optimize different Industry 4.0 processes and environments. 
+Digital Twin (DT) is used to model the Industry 4.0 machine/process before it's inception in real-world using materials.
+Making an artificial digital twin model before makes the researchers and engineers to check the fault cases and study the various processes that can happen, or cases that may fail.
+Based on the artificial digital twin, the researchers can further study and train and improve upon the previous present model. DTs can be defined as (physical and/or virtual) machines
+or computer-based models that are simulating, emulating,
+mirroring, or ‘‘twinning’’ the life of a physical entity, which
+may be an object, a process, a human, or a human-related feature. Each DT is linked to its physical twin through a unique
+key \cite{8901113}. A digital twin can be visualized by a simulation, but a DT is not a simulation, instead it is much more than a simulation. Digital Twin is an exact replica of 
+an real-world entity, which means that it is a living, intelligent model which can evolve if needed to. All the abilities and capabilities of the physical twin can be realized such as monitoring and control.
+We can predict the future status of the digital twin, i.e we can predict future defects and failures. Digital Twin Techologies can enable continuous communication-collaboration-interaction with the 
+physical twin simultaneously. Digital Twins are mostly a part of a Cyber-Physical System (CPS). To sum everything up, we can say that a Digital Twin is a technology which helps the researcher to 
+utilize data fusion, Artificial Intelligence appliations with big data by using the IOT sensors without making the usual physical-twin.
+
+In the context of our project, the cyber-physical system we have consists of a robot where we can employ different sensors to study it's behaviour in an Industry 4.0 environment. The robot is not supposed to have it's sensors do the computation.
+The hypothesis is to make a digital twin, with a god's eye view which can see and then log the behaviour of the robot around the obstacles in the configuration space.
+
+\section{Behavioural Learning}
+Multi-Agent Systems are rapidly growing in usage in a variety of domains. Multi Agent Systems contain, as the name suggests, multiple entities. 
+In environments, where multi-agent systems rapidly collaborate with one another, i.e a dynamic system. The agent needs to learn and improve on basic behaviour using data mining and reinforcement learning.
+In the context of our project, the multi-agent system needs to prevent collision. Thus, we wish to learn the robot's behaviour around the obstacles in the particular space. For this, we note and log the position of the robot
+at every step, and it's nearby obstacles to produce data for a reinforcement learning model.
+
+\section{Conclusion}
