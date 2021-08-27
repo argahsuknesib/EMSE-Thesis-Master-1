@@ -8,7 +8,7 @@
 In the previous chapter, we went over an introduction to the context of the work as well as the methods through which we can accomplish the goal of learning the behaviour of the robot as it moves in the configuration space.
 As we know a basic introduction to the work,  in this chapter we would go over the technologies that are employed to achieve the goal of learning the behaviour of the robot. We will first go over the hardware and software requirements of the robot, and the environment.
 \section{Hardware Employed}
-The project uses a Turtlebot2 \cite{t2} robot. Turtlebot2 is a low-cost, personal robot kit with open-sourced software. The robot was created in 2010, but has been continuously envolved in both 
+The project uses a Turtlebot2 \cite{t2} robot. Turtlebot2 (see Figure~\ref{fig:Turtlebot2}) is a low-cost, personal robot kit with open-sourced software. The robot was created in 2010, but has been continuously envolved in both 
 software strength and hardware with open-source contributions to the project. The Turtlebot2 consists of a base, two wheels, a single board computer and a LIDAR sensor. Other sensors for example a vision sensor, i.e. Camera can be attached later to the mainframe based upon the requirement.
 Turtlebot2 accomplishes SLAM and Navigation efficiently in the configuration space. It is developed to be employable in various scenarios, and can be controlled remotely by a computer or a joystick. 
 Turtlebot2 can be attached with an arm to perform manipulator tasks.
@@ -52,7 +52,7 @@ Gazabo11 was the version being implemented with ROS Noetic in this report's cont
 \subsubsection{Environment's Entities}
 In Gazebo's simulation, we get presented with a blank environment to build upon. We use Computer Aided Design (CAD) to create required entities and obstacles. In our implementation,
 we had to develop boxes, tiles and borders to the environmment. The model is saved in \textit{sde} format, and rendered in Gazebo. Each box is placed at a specific position, and the borders are placed
-to enclose the environment. The whole entity is made over a sheet of tile. 
+to enclose the environment. The whole entity is made over a sheet of tile. The Gazebo environment with a turtlebot is demonstrated in the Figure~\ref{fig:GazeboTurtlebot2} 
 \begin{figure}[th]
     \centering
     \includegraphics[width=\textwidth]{Figures/gazebo-image.png}
@@ -69,7 +69,7 @@ There are various different versions of ROS, each combined with a specific versi
 ROS Noetic were chosen as distributions for the project.
 
 \subsection{ROS Packages}
-In ROS, we have different packages for differnt softwares. A package is created by specific ROS commands. A ROS Package structure is,
+In ROS, we have different packages for differnt softwares. A package is created by specific ROS commands. A ROS Package structure is : 
 \begin{itemize}
     \item \textit{include/package name}: C++ scripts include headers which are stored in this directory.
     \item \textit{msg} : This folder contain msg types, i.e the types of messages being interchanged in processes.
@@ -82,7 +82,7 @@ In ROS, we have different packages for differnt softwares. A package is created 
 \end{itemize}
 
 \subsection{ROS Command Line Tools}
-Packages are a central concept that are used to manage different software. Some command line tools help you to manage such packages, 
+Packages are a central concept that are used to manage different software. Some command line tools help you to manage such packages : 
 \begin{itemize}
     \item \textit{rospack} : finds and retrieves information about the package.
     \item \textit{catkin-create-pkg} : creates a new ROS package. 
@@ -103,7 +103,7 @@ robot field \cite{7482163}. SLAM is one of the most fundamental part of autonomo
 and generate a map. The map generated is used to find the obstacle location and grid surrounding the robot to make an appropriate path planning scenario for the robot.
 Although Localization and Mapping are different technologies, SLAM incorporates them together where localization is done concurrently with the robot creating the map.
 The map is used to note than landmark position and be able to generate an efficient path trajectory. SLAM has the advantage of doing this together at the same time making it the most important 
-algorithm in autonomous robot navigation. SLAM methods implement Extended Kalman filters. The flowchart figure shown below demonstrates the SLAM process.
+algorithm in autonomous robot navigation. SLAM methods implement Extended Kalman filters. Figure~\ref{fig:SLAMFlowchart} demonstrates the SLAM process.
 \begin{figure}[th]
     \centering
     \includegraphics[width=0.5\textwidth]{Figures/SLAM_flowchart.jpeg}
@@ -120,7 +120,7 @@ algorithm in autonomous robot navigation. SLAM methods implement Extended Kalman
 \end{figure}
 
 \subsection{Features of SLAM}
-Three major features of SLAM exist and are discussed below,
+Three major features of SLAM exist and are discussed below : 
 \subsubsection{Mapping}
 For a robot to move around autonomously in an environment. It should know where it is, providing prior knowledge. Mapping provides his capability for the robot to generate a map using the hardware sensor (mostly LIDAR) to get information from the environment.
 There are various ways to represent the map, which are used to generate a path in subsequent steps. The data will be used by the robot to localize and recognize it's own position and landmark.
@@ -130,7 +130,7 @@ The mobile robot should be able to \textit{think} for itself by calculating and 
 \subsubsection{Navigation}
 Navigation employs both Mapping and Localization, by combining the results of both. When the robot navigates through the environment, mapping and localization process are 
 executed periodically and repeatedly recursively to update the robot's information from the environment and saves the map. The robot's exploration is implemented and is able to backtrack to origin point 
-or starting position. Path Planning is done with various algorithms, such as Dijkstra, A\textsuperscript{*}, Potential Field and other algorithms. In our implementation, we used different algorithms which we will describe in the next chapter.
+or starting position. Path Planning is done with various algorithms, such as Dijkstra, A\textsuperscript{*}, Potential Field and other algorithms. In our implementation, we used different algorithms which we will describe in \ref{planner-algorithms}
 
 \subsection{Isssues in SLAM}
 As every method, SLAM has it's owm issues which are uncertainty, correspondence and data association.
@@ -149,19 +149,18 @@ Therefore the performance and time complexity are important to produce reliable 
 
 \section{Path Planning Methods}
 The previous chapter has introduced the term \textit{motion planning} and \textit{path planning} to us. Path plannng algorithms are used to take the design of the workspace and obstacle space to return the path. The robot follows the path which is returned by the algorithm.
-A such algorithm is called a \textit{planner}. According to Steven M. LaValle's definition of a planner \cite{lavelle} : "A planner simply con-
-structs a plan and may be a machine or a human. If the planner is a machine, it will
+A such algorithm is called a \textit{planner}. According to Steven M. LaValle's definition of a planner \cite{lavelle} : "A planner simply constructs a plan and may be a machine or a human. If the planner is a machine, it will
 generally be considered as a planning algorithm. In many circumstances it is an algorithm
 in the strict Turing sense, however, this is not necessary. In some cases, humans become
 planners by developing a plan that works in all situations"
 
-There are two types of path planning algorithms,
+There are two types of path planning algorithms : 
 \begin{itemize}
     \item Global Planner Algorithms
     \item Local Planner Algorithms
 \end{itemize}
 
-\subsection{Global Planner Algorithms}
+\subsection{Global Planner Algorithms}\label{planner-algorithms}
 Global Path Planner utilises the definition of configuration space of the robot which is based upon the global map.
 The global path planning algorithms are known as offline algorithms because the calculation of path is done before the robot moves. Robot's configuration space is used to calculate a path to the final state.
 ROS is utilized to convert the map file which was generated by SLAM to divide the map into square boxes and classifying 
@@ -174,6 +173,7 @@ ROS uses the concept of global costmaps to divide the map into squares based upo
 Thus, after describing the configuration space we will use Graphs to calculate a viable path to the final destination of the robot.
 There are different paths to consider at each and every node in the graph. A path is considered if and only if, a particular next node provides the minimum cost or a user/task specific requirement.
 Different Algorithms we implemented in the project provide a different method to solve this problem and predict the next states of the robot to follow.
+Figure~\ref{fig:PPGrid} shows all the possible paths to reach the goal.
 \begin{figure}[th]
     \centering
     \includegraphics[width=0.5\textwidth]{Figures/grid-path-planning.png}
@@ -184,7 +184,7 @@ Different Algorithms we implemented in the project provide a different method to
 
 \subsubsection{Dijkstra Algorithm}
 Dijkstra's algorithm is a very generic way to find the path to the goal node which are connected by edges if we consider the configuration space to be a graph. Dijkstra's algorithm was developed by Edsger W. Dijkstra \cite{enwiki:1039157161}. The algorithm
-was proposed to solve the path planning. 
+was proposed to solve the path planning by finding the minimum cost path.
 \subsubsection{A\textsuperscript{*} Algorithm}
 A\textsuperscript{*} algorithm is pretty similar to Dijkstra's algorithm but it has increased performance. Dijkstra's algorithm is a new approach as it starts to explore the global obstacle grid with a starting node and doesn't stop till it reaches the ending node.
 It will identify the list of nodes which connect the end node to the starting node to form a path. But there is an issue with Dijkstra, which requires it to explore all the nodes in an equal fashion. This is fine if computation speed and space is not a requirement. 
@@ -211,7 +211,7 @@ As the information about the robot's workspace increases, the quality of the alg
 \subsection{Local Planner Algorithms}
 Local Planners are dynamic path planning algorithm, which means that the algorithm works online while the robot is moving, unlike global planner algorithms where the next states are already decided and the robot follows the specific path. 
 Local Planner Algorithms require constant update and calculation of the values recieved from sensors, wheather it is a LIDAR sensor or a camera vision sensor. The algorithm computes those values returned to predict a short term relapse path towards the goal.
-There are several local planner algorithms such as \textit{DWA local planner}, \textit{TEB local planner} already implemented in the ROS package, which we will discuss about in this section. Local Planner also helps the robot to maintain it's path that was calculated earlier by the global planner algorithm. 
+There are several local planner algorithms such as \textit{Dynaamic Window Approach (DWA) local planner}, \textit{Time-Elastic-Band (TEB) local planner} already implemented in the ROS package, which we will discuss about in this section. Local Planner also helps the robot to maintain it's path that was calculated earlier by the global planner algorithm. 
 In this subsection, we will discuss about the local path planning algorithms.
 
 \subsubsection{TEB local planner}
@@ -220,16 +220,16 @@ The planner uses a novel approach named \textit{Time-Elastic-Band algoritm} for 
 in the paper \cite{KELLER20149822}. The motion planning is to move the robot from A(x\textsubscript{o}, y\textsubscript{o}) to B(x\textsubscript{N}, y\textsubscript{N}) without any collision with relation to the global and local reference frames.
 The local path planner provides a turn in the angle of rotation in \textit{y} axis and a forward motion to avoid the obstacle. 
 
-TEB is done by describing a fixed number of points to the final goal. \textit{(x\textsubscript{0},.....,x\textsubscript{N},
-y\textsubscript{0},.........,y\textsubscript{N})}. The different points are put apart by a time interval. The time interval is the difference in travelling two points. Time Elastic Band is made up from 
+TEB (see Figure~\ref{fig:TEBPlanner}) is done by describing a fixed number of points to the final goal, \textit{(x\textsubscript{0}, y\textsubscript{0})}, \textit{(x\textsubscript{1}, y\textsubscript{1})}, \textit{(x\textsubscript{2}, y\textsubscript{2})}\dots \textit{(x\textsubscript{N}, y\textsubscript{N})}
+ . The different points are put apart by a time interval. The time interval is the difference in travelling two points. Time Elastic Band is made up from 
 two different set of points and the time interval, i.e B = (Q,T) and the time band is computed by minimizing a sum of multiple objectives and cost functions to find the new path to get to the final position. The differences betweent the consecutive points are used to calculate the velocity and acceleration for the robot.
 
 \subsection{DWA local planner}
-DWA local planner stands for using \textit{Dynamic Window Approach} to navigation on a plane. After the global path planner gives a path and a costmap configuration space, the local planner will send the velocity to the robot to avoid any obstacles.
+DWA local planner (see Figure~\ref{fig:DWAPlanner}) stands for using \textit{Dynamic Window Approach} to navigation in a regular updating fashion on the surface. After the global path planner gives a path and a costmap configuration space, the local planner will send the velocity to the robot to avoid any obstacles.
 DWA local planner utilises the BaseLocalPlanner interface which is specified in the navigation package. The \textit{dwa local planner} provides a controller to control the mobile motor of the robot. The controller will connect the path planning process to the robot. The robot uses a map to create a planner trajectory to get from the start to goal location.
 Grid is created around the robot using the LIDAR sensor. The grid cells are utilized to calculate cost value, and the controller will use utilize the value function to send the values of velocity\textsubscript{x}, velocity\textsubscript{y} and velocity rotation theta to the robot.
 
-Major ideas in Dynamic Window Approach (DWA) are described below,
+Major ideas in Dynamic Window Approach (DWA) are described below : 
 \begin{itemize}
     \item Getting values from robot's LIDAR sensor and discretely calculating the robot's control space.
     \item Velocity is calculated from the function to calculate the current state and predicting the next sampled velocity with next state in case of deflection with an obstacle.
@@ -240,15 +240,23 @@ Major ideas in Dynamic Window Approach (DWA) are described below,
     \item You repeat the algorithm everytime you find an obstacle. 
 \end{itemize}
 
+Our choice was to use Dijkstra algorithm for the global planner algorithm and dynamic window approach for the local planner algorithm.
+Implementation for A\textsuperscript{*} and GBFS algorithm is also done, and can be implemented based upon preference.
+
 \begin{figure}[th]
     \centering
-    \includegraphics[width=0.6\textwidth]{Figures/dwa_planner.png}
+    \includegraphics[width=0.9\textwidth]{Figures/dwa_planner.png}
     \decoRule
     \caption[]{DWA Planner}
     \label{fig:DWAPlanner}
-
 \end{figure}
 
-\section{Conclusion}
+\begin{figure}[th]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figures/TEB.png}
+    \decoRule
+    \caption[]{TEB Planner}
+    \label{fig:TEBPlanner}
+\end{figure}
 
 
