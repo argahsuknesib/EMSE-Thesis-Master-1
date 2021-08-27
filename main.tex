@@ -78,12 +78,12 @@ headsepline, % Uncomment to get a line under the header
 \author{Kushagra Singh \textsc{BISEN}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
 \addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
 
-\subject{Biological Sciences} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\subject{Artificial Intelligence} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
 \keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
 \university{\href{https://www.mines-stetienne.fr/}{école nationale supérieure des mines de saint-étienne}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
 \department{\href{https://www.mines-stetienne.fr/recherche/departements/departement-informatique-et-systemes-intelligents/}{Institu Henri Fayol, IT and Intelligent Systems department}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
 \group{\href{http://researchgroup.university.com}{Set of Intelligent Robots Project}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
-\faculty{\href{http://faculty.university.com}{Faculty Name}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+\faculty{\href{http://faculty.university.com}{Mihaela JUGANARU-MATHIEU}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
 
 \AtBeginDocument{
 \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
@@ -157,11 +157,11 @@ headsepline, % Uncomment to get a line under the header
 \item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
 \end{itemize}
  
-\noindent Signed:\\
-\rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
+% \noindent Signed:\\
+% \rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
  
-\noindent Date:\\
-\rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
+% \noindent Date:\\
+% \rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
 \end{declaration}
 
 \cleardoublepage
@@ -182,6 +182,12 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+In this project, we present the implementation of digital twin of a robot to learn the behaviour. The behaviour
+will provide the robot intelligence to prevent collision while navigating. Digital Twin is a technology to use 
+software to produce an exact replica of a physical twin. Digital Twins help to train and test before a physical twin.
+We have used ROS navigation stack with modifications suited to the project for autonomous navigation. We implemented a robot with sensors to execute
+autonomous navigation and technologies such as SLAM. We have developed a method to learn the behaviour of the robot without using information from the robot in an environment with obstacles. The method periodically 
+learns and records the obstacle state around the robot to save in a log file.
 \end{abstract}
 
 %----------------------------------------------------------------------------------------
